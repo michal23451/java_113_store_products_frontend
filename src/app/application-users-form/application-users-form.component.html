@@ -1,0 +1,41 @@
+<div #ref *ngIf="notification" class="notification">
+  {{notification}}
+</div>
+
+<mat-card>
+  <mat-card-title>Application User Form</mat-card-title>
+  <mat-card-subtitle>Add new application user to Your list of available users</mat-card-subtitle>
+  <mat-card-content class="users-form-content">
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Login:</mat-label>
+      <input type="text" matInput placeholder="Name:" [(ngModel)]="applicationUser.login">
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Pass:</mat-label>
+      <input type="text" matInput placeholder="Name:" [(ngModel)]="applicationUser.pass">
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Name:</mat-label>
+      <input type="text" matInput placeholder="Name:" [(ngModel)]="applicationUser.name">
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Surname:</mat-label>
+      <input type="text" matInput placeholder="Name:" [(ngModel)]="applicationUser.surname">
+    </mat-form-field>
+
+
+
+    <div class="form-button-row">
+      <button class="submit-button" type="button" mat-button mat-raised-button (click)="sendApplicationUser()">
+        Submit
+      </button>
+      <button class="clear-button" type="button" mat-button mat-raised-button color="warn" (click)="clearForm()">
+        Clear
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

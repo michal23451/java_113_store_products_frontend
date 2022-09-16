@@ -1,0 +1,32 @@
+<div class="app-container">
+  <!-- HEADER Element -->
+  <header class="app-header mat-elevation-z2">
+    <div class="app-logo">
+      <img class="logo-image" src="../assets/gopher.png" height="48px">
+      <div>
+        <span>Products 113</span>
+      </div>
+    </div>
+    <nav class="app-nav">
+      <div>
+        <button mat-raised-button mat-button [routerLink]="['users']">Users</button>
+      </div>
+      <div>
+        <button mat-raised-button mat-button [routerLink]="['products']">Products</button>
+      </div>
+      <div>
+        <button mat-raised-button mat-button [routerLink]="['home']">Home</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN Element -->
+  <main class="app-main mat-elevation-z2">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- FOOTER Element -->
+  <footer class="app-footer mat-elevation-z2">
+    Autor: Ja! Copyright: wszyscy którzy teraz przepisują
+  </footer>
+</div>

@@ -1,0 +1,16 @@
+.user-btn-add{
+  background-color: var(--gopher-color);
+  color: black;
+}
+
+app-users-list {
+  width: 100%;
+  /* margin: 10px; */
+}
+
+.users-content-tile{
+  width: 100%;
+  height: 100%;
+  /* margin: 10px; */
+}
+
