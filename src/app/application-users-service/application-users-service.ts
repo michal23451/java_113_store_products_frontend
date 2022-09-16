@@ -25,12 +25,24 @@ export class ApplicationUsersService {
     this.http.get('http://localhost:8080/api/user').subscribe((data) => {
       // promise
       this.loadingList = false;
-      console.log(data);
+      //console.log(data);
 
       let receivedApplicationUserList = data as ApplicationUser[];
       this.applicationUserList = receivedApplicationUserList;
     });
   }
+
+  public getApplicationUserList(): any {
+    this.http.get('http://localhost:8080/api/user').subscribe((data) => {
+      // promise
+      //console.log(data);
+      let result = data as ApplicationUser[];
+      this.applicationUserList = result;
+      console.log("wywołano getApplicationUserList")
+    });
+    return this.applicationUserList;
+}
+
 
   public getDefautApplicationUserModel(): ApplicationUser {
     return {

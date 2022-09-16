@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { ApplicationUser } from '../application-users-service/application-users-service';
+import { ApplicationUsersComponent } from '../application-users/application-users.component';
 
 export enum ProductState {
   NEW = "BRAND_NEW",
@@ -10,7 +12,8 @@ export enum ProductState {
 export type Product = {
   id: number|null,
   productName: string,
-  productState: ProductState
+  productState: ProductState,
+  productOwner: ApplicationUser[]|null
 }
 
 @Injectable({
@@ -39,7 +42,8 @@ export class ProductsService {
     return {
       id: null,
       productName: '',
-      productState: ProductState.NEW
+      productState: ProductState.NEW,
+      productOwner: null
     }
   }
 

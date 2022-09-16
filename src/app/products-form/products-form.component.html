@@ -20,7 +20,19 @@
       </mat-select>
     </mat-form-field>
 
-   
+    <mat-form-field appearance="legacy">
+      <mat-label>Owner:</mat-label>
+      <mat-select [(ngModel)]="product.productOwner">
+
+        <mat-option *ngFor="let owner of owners" [value]="owner">
+          {{owner.name}} {{owner.surname}}
+        </mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+
+
 
     <div class="form-button-row">
       <button class="submit-button" type="button" mat-button mat-raised-button (click)="sendProduct()">

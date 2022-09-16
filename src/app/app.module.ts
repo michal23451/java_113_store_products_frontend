@@ -70,7 +70,8 @@ import { ApplicationUsersComponent } from './application-users/application-users
   ],
   providers: [
     ProductsService,
-    ApplicationUsersService
+    ApplicationUsersService,
+    ApplicationUsersListComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { catchError, Observable, of, tap } from 'rxjs';
+import { ApplicationUser, ApplicationUsersService } from '../application-users-service/application-users-service';
 import { Product, ProductsService } from '../products-service/products.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class ProductsFormComponent implements OnInit {
   @ViewChild('ref') child: ElementRef|any;
 
   product: Product;
+  owners: ApplicationUser[];
   sendingProduct: boolean = false;
 
   notification: string|null = null;
@@ -20,8 +22,11 @@ export class ProductsFormComponent implements OnInit {
   constructor(private renderer: Renderer2,
               private router: Router,
               private productsService: ProductsService,
-              private snackBar: MatSnackBar) {
+              private snackBar: MatSnackBar,
+              private applicationUsersService: ApplicationUsersService
+              ) {
     this.product = productsService.getDefautProductModel()
+    this.owners = applicationUsersService.getApplicationUserList();
   }
 
   ngOnInit(): void {
